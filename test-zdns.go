@@ -27,7 +27,7 @@ func main() {
 	rawClient := rawModule.NewLookupClient()
 
 	rawOptions := zdns.ClientOptions{
-		ReuseSockets:          false,
+		ReuseSockets:          true,
 		IsTraced:              true,
 		Verbosity:             3,
 		TCPOnly:               false,
@@ -35,7 +35,6 @@ func main() {
 		NsResolution:          false,
 		LocalAddr:             localAddr,
 		Conn:                  &conn,
-		Nameserver:            "1.1.1.1:53",
 		ModuleOptions:         map[string]string{},
 		IsInternallyRecursive: false,
 		IterativeOptions:      zdns.IterativeOptions{},
